@@ -1,0 +1,90 @@
+@import "../abstracts/mixin";
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif, "Font Awesome 5 Free";
+  font-style: normal;
+  background: #f3f3f3;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &__left {
+    width: 240px;
+    position: fixed;
+    z-index: 99;
+    transition: all 0.5s;
+    -webkit-transition: all 0.25s;
+
+    &--hide {
+      margin-left: -240px;
+    }
+  }
+
+  &__right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 240px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.25s;
+
+    &--left-slide {
+      margin-left: 0 !important;
+    }
+  }
+
+  .content {
+    margin-top: 80px;
+    font-family: "Meiryo", sans-serif;
+
+    &__intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 80px;
+
+      h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0 0 25px 0;
+      }
+    }
+  }
+}
+
+@include res-max-width(1024px) {
+  .container {
+    &__left {
+      margin-left: -240px;
+
+      &--hide {
+        margin-left: 0;
+      }
+    }
+
+    &__right {
+      margin-left: 0;
+    }
+  }
+}
+
+@include res-max-width(425px) {
+  .container {
+    &__left {
+      width: 100%;
+      margin-left: -425px;
+
+      &--hide {
+        margin-left: 0;
+      }
+    }
+
+    .content {
+      &__intro {
+        padding-top: 80px;
+      }
+    }
+  }
+}

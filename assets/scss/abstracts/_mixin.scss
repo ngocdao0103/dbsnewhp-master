@@ -1,0 +1,15 @@
+// Responsive max width
+// Ex: @include res-max-width(1920px)
+@mixin res-max-width($width) {
+  @media screen and(max-width: $width) {
+    @content;
+  }
+}
+
+// Responsive max width
+// Ex: @include res-min-width(1920px)
+@mixin res-min-width($width) {
+  @media screen and(min-width: $width) {
+    @content;
+  }
+}

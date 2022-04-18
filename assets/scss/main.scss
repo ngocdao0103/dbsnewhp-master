@@ -1,0 +1,114 @@
+@import "abstracts/mixin";
+
+@import "layouts/body";
+@import "layouts/header";
+@import "layouts/introduction";
+@import "layouts/footer";
+@import "layouts/sidebar";
+@import "layouts/breadcrumb";
+
+@import "components/buttons";
+
+@import "pages/company/profile";
+@import "pages/company/message";
+@import "pages/company/management";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.row {
+  display: flex;
+  display: -ms-flexbox;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
+.display-flex {
+  display: flex;
+  display: -ms-flexbox;
+}
+
+.flex-reverse {
+  flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+}
+
+.flex-column {
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.text-center {
+  text-align: center;
+  text-align: -moz-center;
+}
+
+.title {
+  position: relative;
+  display: inline-block;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Meiryo", sans-serif;
+  margin: 0 0 60px 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 35%;
+    height: 1px;
+    bottom: -15px;
+    left: 35%;
+    border-bottom: 4px solid $light-green;
+  }
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.mr-50 {
+  margin-right: 50px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.ml-60 {
+  margin-left: 60px;
+}

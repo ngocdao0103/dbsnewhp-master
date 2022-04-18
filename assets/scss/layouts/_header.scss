@@ -1,0 +1,77 @@
+@import "../abstracts/mixin";
+
+.header {
+  width: calc(100% - 240px);
+  height: 80px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
+
+  &--full-width {
+    width: 100% !important;
+  }
+
+  &__hamburger {
+    display: none;
+    filter: invert(60%) sepia(100%) saturate(0%) hue-rotate(4deg) brightness(100%) contrast(100%);
+    cursor: pointer;
+
+    &.-active {
+      display: block;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    .-logo {
+      margin-left: 20px;
+    }
+  }
+
+  &__right {
+    margin-right: 20px;
+  }
+}
+
+@include res-max-width(1024px) {
+  .header {
+    width: 100%;
+
+    &__hamburger {
+      display: block;
+    }
+  }
+}
+
+@include res-max-width(540px) {
+  .header {
+    .btn__header {
+      display: none;
+    }
+  }
+}
+
+@include res-max-width(425px) {
+  .header {
+    flex-direction: column;
+
+    &__left {
+      margin-right: auto;
+    }
+  }
+}
+
+@include res-max-width(375px) {
+  .header {
+    &__left {
+      .-logo {
+        margin-left: 0;
+      }
+    }
+  }
+}

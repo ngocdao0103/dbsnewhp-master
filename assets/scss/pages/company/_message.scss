@@ -1,0 +1,292 @@
+@import "../../abstracts/mixin";
+@import "../../abstracts/variables";
+
+.company-message {
+  background: url("../images/company-background.png") no-repeat fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  padding-bottom: 80px;
+
+  .content__intro {
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    position: relative;
+    width: 1140px;
+    height: 470px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    margin: 0 auto;
+
+    .-description-background {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      background-color: #ffffff;
+      transform: rotateY(180deg);
+    }
+
+    .-ceo-avatar {
+      z-index: 1;
+    }
+
+    .-description-content {
+      width: 695px;
+      z-index: 1;
+
+      h5 {
+        font-size: 24px;
+        line-height: 42px;
+        color: $green;
+        margin: 0 0 20px 0;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 42px;
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  &__declaration {
+    position: relative;
+    width: 1140px;
+    background: #ffffff;
+    margin: 80px auto 0;
+    padding: 80px 0;
+
+    &-value {
+      span {
+        color: #000000;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 40px;
+      }
+
+      p {
+        margin: 0 0 5px 0;
+
+        &:last-child {
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+
+      .-number {
+        width: 55px;
+        color: $light-green;
+        font-size: 36px;
+        font-weight: 700;
+        font-family: 'Bahnschrift', serif;
+      }
+    }
+
+    .-wrap-content {
+      display: flex;
+      display: -ms-flexbox;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 80px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .-quote {
+      width: 770px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+    }
+
+    .-declaration-content {
+      width: 785px;
+      padding: 60px 0;
+      border: 2px solid $light-green;
+      box-shadow: 2px 2px 2px 0 $light-green, 5px 5px 15px 5px rgba(120,203,78,0);
+      -webkit-box-shadow: 2px 2px 2px 0 $light-green, 5px 5px 15px 5px rgba(120,203,78,0);
+    }
+
+    .-principle-description {
+      font-size: 16px;
+    }
+  }
+}
+
+@include res-max-width(1366px) {
+  .company-message {
+    &__description {
+      width: 90%;
+
+      .-ceo-avatar {
+        height: 90%;
+      }
+
+      .-description-content {
+        width: 60%;
+
+        h5 {
+          line-height: 40px;
+        }
+
+        p {
+          line-height: 30px;
+        }
+      }
+    }
+
+    &__declaration {
+      width: 90%;
+    }
+  }
+}
+
+@include res-max-width(1024px) {
+  .company-message {
+    &__intro {
+      margin-bottom: 0;
+    }
+
+    &__description {
+      height: 435px;
+    }
+  }
+}
+
+@include res-max-width(768px) {
+  .company-message {
+    &__intro {
+      h1 {
+        font-size: 40px;
+      }
+
+      h2 {
+        width: 85%;
+        font-size: 30px;
+      }
+    }
+
+    &__description {
+      .-description-background {
+        height: 70%;
+      }
+
+      .-description-content {
+        width: 50%;
+        left: 40px;
+
+        h5 {
+          font-size: 20px;
+          line-height: 30px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    &__declaration {
+      .-wrap-content {
+        margin-top: 50px;
+      }
+
+      .-quote {
+        width: 85%;
+      }
+
+      .-declaration-content {
+        width: 90%;
+        padding: 30px 0;
+
+        .row {
+          margin-left: 30px;
+
+          .display-flex {
+            width: 85%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include res-max-width(425px) {
+  .company-message {
+    &__intro {
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        width: 85%;
+        font-size: 20px;
+      }
+    }
+
+    &__description {
+      .-description-background {
+        height: 70%;
+      }
+
+      .-description-content {
+        width: 50%;
+        left: 40px;
+
+        h5 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__declaration {
+      .-wrap-content {
+        margin-top: 20px;
+      }
+
+      .title {
+        font-size: 26px;
+        margin-bottom: 40px;
+      }
+
+      .-quote {
+        font-size: 20px;
+      }
+
+      .-declaration-content {
+        .row {
+          margin-left: 10px;
+
+          span {
+            width: 80%;
+            font-size: 20px;
+            line-height: 25px;
+          }
+
+          .display-flex {
+            width: 80%;
+          }
+
+          .-number {
+            width: 40px;
+            font-size: 26px;
+          }
+        }
+      }
+    }
+  }
+}

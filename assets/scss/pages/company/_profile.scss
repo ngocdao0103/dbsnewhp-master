@@ -1,0 +1,149 @@
+@import "../../abstracts/mixin";
+@import "../../abstracts/variables";
+
+.company-profile {
+  padding-bottom: 80px;
+
+  .content__intro {
+    margin-bottom: 80px;
+  }
+
+  &__content {
+    width: 1140px;
+    background: #ffffff;
+    padding: 30px 0;
+    margin: 0 auto;
+
+    .table {
+      width: 1080px;
+      margin: 0 auto;
+
+      &__row {
+        display: flex;
+        border-bottom: 1px solid #D5D5D5;
+
+        &:last-child {
+          border-bottom: none;
+
+          .table__cell {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      &__cell {
+        text-align: left;
+        font-size: 16px;
+        padding-bottom: 20px;
+
+        &:first-child {
+          width: 280px;
+          font-weight: 700;
+        }
+
+        &:last-child {
+          width: 100%;
+        }
+
+        p {
+          margin: 0 0 5px;
+        }
+      }
+
+      &__intro-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: max-content;
+
+        img {
+          height: 65px;
+        }
+
+        h6 {
+          font-size: 16px;
+          font-weight: normal;
+          padding: 0;
+          margin: 10px 0 0;
+        }
+      }
+
+      .-highlight {
+        text-decoration: none;
+        color: $light-green;
+
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 5px;
+        }
+      }
+    }
+  }
+}
+
+@include res-max-width(1440px) {
+  .company-profile {
+    &__content {
+      width: 90%;
+
+      .table {
+        width: 95%;
+      }
+    }
+  }
+}
+
+@include res-max-width(540px) {
+  .company-profile {
+    &__content {
+      .table {
+        &__intro-card {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .display-flex {
+      flex-direction: column;
+    }
+  }
+}
+
+@include res-max-width(425px) {
+  .company-profile {
+    &__content {
+      width: 90%;
+
+      .table {
+        width: 100%;
+        margin: 0;
+
+        &__row {
+          padding: 0 10px;
+
+          &:last-child {
+            .table__cell {
+              align-items: center;
+            }
+          }
+        }
+
+        &__cell {
+          font-size: 14px;
+
+          &:first-child {
+            width: 140px;
+          }
+        }
+
+        &__intro-card {
+          margin-right: 0 !important;
+
+          h6 {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
